@@ -220,6 +220,7 @@ if __name__=="__main__":
     if torch.cuda.device_count() > 1:
         print("Let's use", torch.cuda.device_count(), "GPUs!")
     
+    net = net.to(dev)
     loss_func = F.cross_entropy
     opti = optim.SGD(net.parameters(), lr=args['learning_rate'])
 
